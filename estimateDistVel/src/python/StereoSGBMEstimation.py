@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Sep 24 20:07:01 2020
+Created on Sun Oct  4 13:26:48 2020
 
 @author: john
 """
-
 import cv2 as cv
 import numpy as np
 
@@ -25,15 +24,25 @@ for frame_iter in range(0,num_frames):
     
     frame_iter_str = str(frame_iter).zfill(10)
     frame_l = cv.imread(path_left + frame_iter_str +".png")
-    gray_l = cv.cvtColor(frame_l, cv.COLOR_BGR2GRAY)
+    #gray_l = cv.cvtColor(frame_l, cv.COLOR_BGR2GRAY)
     frame_r = cv.imread(path_right + frame_iter_str +".png")
-    gray_r = cv.cvtColor(frame_r, cv.COLOR_BGR2GRAY)
+    #gray_r = cv.cvtColor(frame_r, cv.COLOR_BGR2GRAY)
     
-    stereo = cv.StereoBM_create(numDisparities=96, blockSize=21)
-    disparity = stereo.compute(gray_l,gray_r)
-    # Output is [16,4] fixed-point. Convert to float
-    disparity = np.array(disparity)
-    disparity = disparity.astype(np.float32)/16 + 1
+    window_size = 5
+    min_disp = 0
+    num_disp = 96
+    stereo = cv.StereoSGBM_create(minDisparity = min_disp,
+        numDisparities = num_disp,
+        blockSize = window_size,
+        P1 = 8*3*window_size**2,
+        P2 = 32*3*window_size**2,
+        disp12MaxDiff = 1,
+        uniquenessRatio = 10,
+        speckleWindowSize = 100,
+        speckleRange = 32
+    )
+
+    disp = stereo.compute(frame_l, frame_r).astype(np.float32) / 16.0
     
     # Calculating depth might be something like
     # For each bounding box
@@ -41,8 +50,9 @@ for frame_iter in range(0,num_frames):
     #   Depth = camera_distance/average disparity
     #   Convert from pixels to meters?
     
-    depth_map = (disparity - stereo.getMinDisparity())/stereo.getNumDisparities()
+    depth_map = (disp - min_disp)/num_disp
     cv.imshow('Disparity Map', depth_map)
+    cv.imshow('Video Feed', frame_l)
     if cv.waitKey(50) & 0xFF == ord('q'):
         break
     
