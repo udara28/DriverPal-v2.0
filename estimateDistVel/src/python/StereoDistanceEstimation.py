@@ -16,10 +16,8 @@ path_left = path + "rgb_left/data/"
 path_right = path + "rgb_right/data/"
 
 # Intrinsic parameters from calibration data
-fx = 9.037596e+02 # pixels
-fy = 9.019653e+02 # pixels
-f = (fx + fy)/2
-camera_distance = -3.875744e+02 # pixels, camera 1 -> camera 2
+f = 721.5377 # pixels, from EvaluationUtils
+camera_distance = 0.54 # meters, from EvaluationUtils. Camera 2 -> 3
 
 for frame_iter in range(0,num_frames):
     
@@ -38,7 +36,7 @@ for frame_iter in range(0,num_frames):
     # Calculating depth might be something like
     # For each bounding box
     #   Compute average disparity
-    #   Depth = camera_distance/average disparity
+    #   Depth = f*camera_distance/average disparity
     #   Convert from pixels to meters?
     
     depth_map = (disparity - stereo.getMinDisparity())/stereo.getNumDisparities()

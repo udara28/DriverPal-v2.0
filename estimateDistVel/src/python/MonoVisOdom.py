@@ -11,7 +11,7 @@ import numpy as np
 
 # Read first two frames
 num_frames = 438
-path = "/home/john/Documents/Xilinx_Contest/DriverPal-v2.0/optical-flow/Test_Datasets/Kitti_2011_09_26_drive_0051/2011_09_26_drive_0051_sync/rgb_left/data/"
+path = "/home/john/Documents/Xilinx_Contest/DriverPal-v2.0/estimateDistVel/Test_Datasets/Kitti_2011_09_26_drive_0051/2011_09_26_drive_0051_sync/rgb_left/data/"
 
 frame_iter = 0
 frame_iter_str = str(frame_iter).zfill(10)
