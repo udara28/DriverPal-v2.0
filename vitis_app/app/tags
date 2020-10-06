@@ -1,0 +1,153 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DECODETHREAD	include/decodethread.hpp	17;"	d
+DPUTHREAD	include/dputhread.hpp	19;"	d
+DecodeThread	include/decodethread.hpp	/^struct DecodeThread : public MyThread {$/;"	s	namespace:vitis::ai
+DecodeThread	src/decodethread.cpp	/^  DecodeThread::DecodeThread(int channel_id, const std::string& video_file, queue_t* queue)$/;"	f	class:vitis::ai::DecodeThread
+DpuFilter	include/filter.hpp	/^  DpuFilter(std::unique_ptr<dpu_model_type_t>&& dpu_model,$/;"	f	struct:vitis::ai::DpuFilter
+DpuFilter	include/filter.hpp	/^struct DpuFilter : public Filter {$/;"	s	namespace:vitis::ai
+DpuThread	include/dputhread.hpp	/^struct DpuThread : public MyThread {$/;"	s	namespace:vitis::ai
+DpuThread	src/dputhread.cpp	/^   DpuThread::DpuThread(std::unique_ptr<Filter>&& filter, queue_t* queue_in,$/;"	f	class:vitis::ai::DpuThread
+FILTER	include/filter.hpp	17;"	d
+FRAMEINFO	include/frameinfo.hpp	18;"	d
+Filter	include/filter.hpp	/^  explicit Filter() {}$/;"	f	struct:vitis::ai::Filter
+Filter	include/filter.hpp	/^struct Filter {$/;"	s	namespace:vitis::ai
+FrameCache	include/guithread.hpp	/^  struct FrameCache {$/;"	s	struct:vitis::ai::GuiThread
+FrameInfo	include/frameinfo.hpp	/^struct FrameInfo {$/;"	s	namespace:vitis::ai
+GUITHREAD	include/guithread.hpp	19;"	d
+GuiThread	include/guithread.hpp	/^struct GuiThread : public MyThread {$/;"	s	namespace:vitis::ai
+GuiThread	src/guithread.cpp	/^GuiThread::GuiThread()$/;"	f	class:vitis::ai::GuiThread
+MyThread	include/mythread.hpp	/^struct MyThread {$/;"	s	namespace:vitis::ai
+MyThread	src/mythread.cpp	/^   MyThread::MyThread() : stop_(false), thread_{nullptr} {$/;"	f	class:vitis::ai::MyThread
+NormalizeInputData	include/filter.hpp	/^  void NormalizeInputData(uint8_t* input, int rows, int cols, int channels,$/;"	f	struct:vitis::ai::DpuFilter
+SORTTHREAD	include/sortthread.hpp	17;"	d
+SortingThread	include/sortthread.hpp	/^struct SortingThread : public MyThread {$/;"	s	namespace:vitis::ai
+SortingThread	src/sortthread.cpp	/^ SortingThread::SortingThread(queue_t* queue_in, queue_t* queue_out,$/;"	f	class:vitis::ai::SortingThread
+USE_DRM	include/guithread.hpp	29;"	d
+USE_DRM	include/mythread.hpp	28;"	d
+USE_DRM	src/mythread.cpp	25;"	d	file:
+USE_DRM	test/usb_input_multi_threads_xcl_refinedet.cpp	48;"	d	file:
+USE_KERNEL	src/decodethread.cpp	25;"	d	file:
+ai	include/decodethread.hpp	/^    namespace ai{$/;"	n	namespace:vitis
+ai	include/dputhread.hpp	/^namespace ai {$/;"	n	namespace:vitis
+ai	include/filter.hpp	/^namespace ai {$/;"	n	namespace:vitis
+ai	include/frameinfo.hpp	/^    namespace ai{$/;"	n	namespace:vitis
+ai	include/guithread.hpp	/^    namespace ai{$/;"	n	namespace:vitis
+ai	include/mythread.hpp	/^namespace ai {$/;"	n	namespace:vitis
+ai	include/sortthread.hpp	/^    namespace ai{$/;"	n	namespace:vitis
+ai	src/decodethread.cpp	/^namespace vitis{namespace ai{$/;"	n	namespace:vitis	file:
+ai	src/dputhread.cpp	/^    namespace ai{$/;"	n	namespace:vitis	file:
+ai	src/guithread.cpp	/^namespace ai {$/;"	n	namespace:vitis	file:
+ai	src/mythread.cpp	/^namespace ai {$/;"	n	namespace:vitis	file:
+ai	src/sortthread.cpp	/^    namespace ai{$/;"	n	namespace:vitis	file:
+all_threads	src/mythread.cpp	/^   inline std::vector<MyThread*>& MyThread::all_threads() {$/;"	f	class:vitis::ai::MyThread
+belonging	include/frameinfo.hpp	/^  int belonging;$/;"	m	struct:vitis::ai::FrameInfo
+channel_id	include/frameinfo.hpp	/^  int channel_id;$/;"	m	struct:vitis::ai::FrameInfo
+channel_id_	include/decodethread.hpp	/^  int channel_id_;$/;"	m	struct:vitis::ai::DecodeThread
+channel_name	include/frameinfo.hpp	/^  std::string channel_name;$/;"	m	struct:vitis::ai::FrameInfo
+clean_up_queue	src/guithread.cpp	/^void GuiThread::clean_up_queue() {$/;"	f	class:vitis::ai::GuiThread
+create_dpu_filter	include/filter.hpp	/^std::unique_ptr<vitis::ai::Filter> create_dpu_filter($/;"	f	namespace:vitis::ai
+dirty	include/guithread.hpp	/^    bool dirty;$/;"	m	struct:vitis::ai::GuiThread::FrameCache
+dpu_mat	include/frameinfo.hpp	/^  cv::Mat dpu_mat;\/\/ run dpu thread task required$/;"	m	struct:vitis::ai::FrameInfo
+dpu_model_	include/filter.hpp	/^  std::unique_ptr<dpu_model_type_t> dpu_model_;$/;"	m	struct:vitis::ai::DpuFilter
+filter_	include/dputhread.hpp	/^  std::unique_ptr<Filter> filter_;$/;"	m	struct:vitis::ai::DpuThread
+fps	include/frameinfo.hpp	/^  float fps;\/\/ realtime fps$/;"	m	struct:vitis::ai::FrameInfo
+fps_	include/sortthread.hpp	/^  float fps_;$/;"	m	struct:vitis::ai::SortingThread
+frame_id	include/frameinfo.hpp	/^  unsigned long frame_id;$/;"	m	struct:vitis::ai::FrameInfo
+frame_id_	include/decodethread.hpp	/^  unsigned long frame_id_;$/;"	m	struct:vitis::ai::DecodeThread
+frame_id_	include/sortthread.hpp	/^  unsigned long frame_id_;$/;"	m	struct:vitis::ai::SortingThread
+frame_info	include/guithread.hpp	/^    FrameInfo frame_info;$/;"	m	struct:vitis::ai::GuiThread::FrameCache
+frames_	include/guithread.hpp	/^ std::map<int, FrameCache> frames_;$/;"	m	struct:vitis::ai::GuiThread
+g_avi_file	test/usb_input_multi_threads_xcl_refinedet.cpp	/^static std::vector<std::string> g_avi_file;$/;"	v	file:
+g_num_of_threads	test/usb_input_multi_threads_xcl_refinedet.cpp	/^static std::vector<int> g_num_of_threads;$/;"	v	file:
+getQueue	src/guithread.cpp	/^queue_t* GuiThread::getQueue() { return queue_.get(); }$/;"	f	class:vitis::ai::GuiThread
+horizontal_num	include/frameinfo.hpp	/^  int horizontal_num;$/;"	m	struct:vitis::ai::FrameInfo
+id	include/filter.hpp	/^  static int id;$/;"	m	struct:vitis::ai::DpuFilter
+id	include/filter.hpp	/^int DpuFilter<dpu_model_type_t, ProcessResult>::id = 0;$/;"	m	class:vitis::ai::DpuFilter
+idx	test/usb_input_multi_threads_xcl_refinedet.cpp	/^static int idx = 0;$/;"	v	file:
+img	include/guithread.hpp	/^ static cv::Mat img;$/;"	m	struct:vitis::ai::GuiThread
+in_devname	include/decodethread.hpp	/^  const char * in_devname;$/;"	m	struct:vitis::ai::DecodeThread
+inactive_counter_	include/guithread.hpp	/^  int inactive_counter_;$/;"	m	struct:vitis::ai::GuiThread
+instance	src/guithread.cpp	/^std::shared_ptr<GuiThread> GuiThread::instance() {$/;"	f	class:vitis::ai::GuiThread
+is_camera_	include/decodethread.hpp	/^  bool is_camera_;$/;"	m	struct:vitis::ai::DecodeThread
+is_stopped	src/mythread.cpp	/^  bool MyThread::is_stopped() { return stop_; }$/;"	f	class:vitis::ai::MyThread
+local_rect	include/frameinfo.hpp	/^  cv::Rect_<int> local_rect;$/;"	m	struct:vitis::ai::FrameInfo
+main	src/mythread.cpp	/^  void MyThread::main() {$/;"	f	class:vitis::ai::MyThread
+main	test/usb_input_multi_threads_xcl_refinedet.cpp	/^int main(int argc, char* argv[]) {$/;"	f
+main_proxy	src/mythread.cpp	/^   void MyThread::main_proxy(MyThread* me) { return me->main(); }$/;"	f	class:vitis::ai::MyThread
+max_fps	include/frameinfo.hpp	/^  float max_fps;\/\/ maximum fps$/;"	m	struct:vitis::ai::FrameInfo
+max_fps_	include/sortthread.hpp	/^  float max_fps_;$/;"	m	struct:vitis::ai::SortingThread
+mosaik_height	include/frameinfo.hpp	/^  int mosaik_height;$/;"	m	struct:vitis::ai::FrameInfo
+mosaik_width	include/frameinfo.hpp	/^  int mosaik_width;$/;"	m	struct:vitis::ai::FrameInfo
+my_tensor_scale	include/filter.hpp	/^  float my_tensor_scale(vitis::ai::library::InputTensor& tensor) {$/;"	f	struct:vitis::ai::DpuFilter
+name	src/decodethread.cpp	/^  std::string DecodeThread::name() {$/;"	f	class:vitis::ai::DecodeThread
+name	src/dputhread.cpp	/^std::string DpuThread::name() $/;"	f	class:vitis::ai::DpuThread
+name	src/guithread.cpp	/^std::string GuiThread::name() { return std::string{"GUIThread"}; }$/;"	f	class:vitis::ai::GuiThread
+name	src/sortthread.cpp	/^std::string SortingThread::name()$/;"	f	class:vitis::ai::SortingThread
+open_stream	src/decodethread.cpp	/^  void DecodeThread::open_stream() {$/;"	f	class:vitis::ai::DecodeThread
+override	include/decodethread.hpp	/^  virtual int run() override;$/;"	m	struct:vitis::ai::DecodeThread
+override	include/decodethread.hpp	/^  virtual std::string name() override;$/;"	m	struct:vitis::ai::DecodeThread
+override	include/dputhread.hpp	/^  virtual int run() override;$/;"	m	struct:vitis::ai::DpuThread
+override	include/dputhread.hpp	/^  virtual std::string name() override;$/;"	m	struct:vitis::ai::DpuThread
+override	include/guithread.hpp	/^  virtual std::string name() override; $/;"	m	struct:vitis::ai::GuiThread
+override	include/sortthread.hpp	/^  virtual int run() override ;$/;"	m	struct:vitis::ai::SortingThread
+override	include/sortthread.hpp	/^  virtual std::string name() override ;$/;"	m	struct:vitis::ai::SortingThread
+page_layout	include/frameinfo.hpp	/^  cv::Rect_<int> page_layout;$/;"	m	struct:vitis::ai::FrameInfo
+param	include/decodethread.hpp	/^  V4L2DeviceParameters param;$/;"	m	struct:vitis::ai::DecodeThread
+parse_opt	test/usb_input_multi_threads_xcl_refinedet.cpp	/^inline void parse_opt(int argc, char* argv[], int start_pos = 1) {$/;"	f
+points_	include/sortthread.hpp	/^  std::deque<std::chrono::time_point<std::chrono::steady_clock>> points_;$/;"	m	struct:vitis::ai::SortingThread
+process_result	test/usb_input_multi_threads_xcl_refinedet.cpp	/^static cv::Mat process_result(cv::Mat& image_show,$/;"	f	file:
+processor_	include/filter.hpp	/^  const ProcessResult& processor_;$/;"	m	struct:vitis::ai::DpuFilter
+queue_	include/decodethread.hpp	/^  queue_t* queue_;$/;"	m	struct:vitis::ai::DecodeThread
+queue_	include/guithread.hpp	/^  std::unique_ptr<queue_t> queue_;$/;"	m	struct:vitis::ai::GuiThread
+queue_in_	include/dputhread.hpp	/^  queue_t* queue_in_;$/;"	m	struct:vitis::ai::DpuThread
+queue_in_	include/sortthread.hpp	/^  queue_t* queue_in_;$/;"	m	struct:vitis::ai::SortingThread
+queue_out_	include/dputhread.hpp	/^  queue_t* queue_out_;$/;"	m	struct:vitis::ai::DpuThread
+queue_out_	include/sortthread.hpp	/^  queue_t* queue_out_;$/;"	m	struct:vitis::ai::SortingThread
+rects	include/guithread.hpp	/^ static std::vector<cv::Rect> rects;$/;"	m	struct:vitis::ai::GuiThread
+run	src/decodethread.cpp	/^   int DecodeThread::run() {$/;"	f	class:vitis::ai::DecodeThread
+run	src/dputhread.cpp	/^   int DpuThread::run()  {$/;"	f	class:vitis::ai::DpuThread
+run	src/guithread.cpp	/^int GuiThread::run() {$/;"	f	class:vitis::ai::GuiThread
+run	src/sortthread.cpp	/^   int SortingThread::run() {$/;"	f	class:vitis::ai::SortingThread
+show_mat	include/frameinfo.hpp	/^  cv::Mat show_mat;\/\/ run gui thread task required$/;"	m	struct:vitis::ai::FrameInfo
+signal_handler	src/mythread.cpp	/^   void MyThread::signal_handler(int) { stop_all(); }$/;"	f	class:vitis::ai::MyThread
+start	src/mythread.cpp	/^  void MyThread::start() {$/;"	f	class:vitis::ai::MyThread
+start_all	src/mythread.cpp	/^   void MyThread::start_all() {$/;"	f	class:vitis::ai::MyThread
+stop	src/mythread.cpp	/^  void MyThread::stop() {$/;"	f	class:vitis::ai::MyThread
+stop_	include/mythread.hpp	/^  bool stop_;$/;"	m	struct:vitis::ai::MyThread
+stop_all	src/mythread.cpp	/^   void MyThread::stop_all() {$/;"	f	class:vitis::ai::MyThread
+suffix_	include/dputhread.hpp	/^  std::string suffix_;$/;"	m	struct:vitis::ai::DpuThread
+suffix_	include/sortthread.hpp	/^  std::string suffix_;$/;"	m	struct:vitis::ai::SortingThread
+thread_	include/mythread.hpp	/^  std::unique_ptr<std::thread> thread_;$/;"	m	struct:vitis::ai::MyThread
+usage_video	test/usb_input_multi_threads_xcl_refinedet.cpp	/^inline void usage_video(const char* progname) {$/;"	f
+v4l2Mats	include/decodethread.hpp	/^ static std::vector<cv::Mat> v4l2Mats;$/;"	m	struct:vitis::ai::DecodeThread
+v4l2_videoCapture	src/decodethread.cpp	/^ int DecodeThread::v4l2_videoCapture(std::vector<cv::Mat>& mats)$/;"	f	class:vitis::ai::DecodeThread
+vertical_num	include/frameinfo.hpp	/^  int vertical_num;$/;"	m	struct:vitis::ai::FrameInfo
+videoCapture	include/decodethread.hpp	/^  V4l2Capture* videoCapture;$/;"	m	struct:vitis::ai::DecodeThread
+video_file_	include/decodethread.hpp	/^  std::string video_file_;$/;"	m	struct:vitis::ai::DecodeThread
+video_stream_	include/decodethread.hpp	/^  std::unique_ptr<cv::VideoCapture> video_stream_;$/;"	m	struct:vitis::ai::DecodeThread
+vitis	include/decodethread.hpp	/^namespace vitis{$/;"	n
+vitis	include/dputhread.hpp	/^namespace vitis {$/;"	n
+vitis	include/filter.hpp	/^namespace vitis {$/;"	n
+vitis	include/frameinfo.hpp	/^namespace vitis{$/;"	n
+vitis	include/guithread.hpp	/^namespace vitis{$/;"	n
+vitis	include/mythread.hpp	/^namespace vitis {$/;"	n
+vitis	include/sortthread.hpp	/^namespace vitis{$/;"	n
+vitis	src/decodethread.cpp	/^namespace vitis{namespace ai{$/;"	n	file:
+vitis	src/dputhread.cpp	/^namespace vitis {$/;"	n	file:
+vitis	src/guithread.cpp	/^namespace vitis {$/;"	n	file:
+vitis	src/mythread.cpp	/^namespace vitis {$/;"	n	file:
+vitis	src/sortthread.cpp	/^namespace vitis{$/;"	n	file:
+wait	src/mythread.cpp	/^  void MyThread::wait() {$/;"	f	class:vitis::ai::MyThread
+wait_all	src/mythread.cpp	/^   void MyThread::wait_all() {$/;"	f	class:vitis::ai::MyThread
+~DecodeThread	include/decodethread.hpp	/^  virtual ~DecodeThread() {}$/;"	f	struct:vitis::ai::DecodeThread
+~DpuFilter	include/filter.hpp	/^  virtual ~DpuFilter() {}$/;"	f	struct:vitis::ai::DpuFilter
+~DpuThread	include/dputhread.hpp	/^  virtual ~DpuThread() {}$/;"	f	struct:vitis::ai::DpuThread
+~Filter	include/filter.hpp	/^  virtual ~Filter() {}$/;"	f	struct:vitis::ai::Filter
+~GuiThread	include/guithread.hpp	/^  virtual ~GuiThread() {  \/\/$/;"	f	struct:vitis::ai::GuiThread
+~MyThread	src/mythread.cpp	/^  MyThread:: ~MyThread() {  \/\/$/;"	f	class:vitis::ai::MyThread
+~SortingThread	include/sortthread.hpp	/^  virtual ~SortingThread() {}$/;"	f	struct:vitis::ai::SortingThread
