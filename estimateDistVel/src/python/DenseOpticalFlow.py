@@ -26,7 +26,7 @@ def draw_hsv(flow):
     return bgr
 
 # The video feed is read in as a VideoCapture object
-cap = cv.VideoCapture("/home/john/Documents/Xilinx_Contest/optical-flow/Test_Datasets/cac07407-0396e053.mov")
+cap = cv.VideoCapture("/home/john/Documents/Xilinx_Contest/DriverPal-v2.0/estimateDistVel/Test_Datasets/DeepDrive/cac07407-0396e053.mov")
 # ret = a boolean return value from getting the frame, first_frame = the first frame in the entire video sequence
 ret, first_frame = cap.read()
 # Converts frame to grayscale because we only need the luminance channel for detecting edges - less computationally expensive
