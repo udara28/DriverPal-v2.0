@@ -1,3 +1,26 @@
+"""
+ MIT License
+
+ Copyright (c) 2020 John T Vorhies
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+"""
 import cv2 as cv
 import numpy as np
 
@@ -41,13 +64,13 @@ while(cap.isOpened()):
         # Calculates dense optical flow by Farneback method
         # https://docs.opencv.org/3.0-beta/modules/video/doc/motion_analysis_and_object_tracking.html#calcopticalflowfarneback
         flow = cv.calcOpticalFlowFarneback(prev_gray, gray, None, 0.5, 3, 15, 3, 5, 1.2, 0)
-        
+
         # Opens a new window and displays the output frame
         cv.namedWindow("dense optical flow", cv.WINDOW_NORMAL)
         cv.resizeWindow("dense optical flow", 1440,1280)
         vis = np.concatenate((frame, draw_hsv(flow), draw_flow(gray,flow)), axis=0)
         cv.imshow("dense optical flow", vis)
-        
+
         # Updates previous frame
         prev_gray = gray
         # Frames are read by intervals of 1 millisecond. The programs breaks out of the while loop when the user presses the 'q' key

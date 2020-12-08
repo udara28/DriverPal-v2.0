@@ -30,3 +30,24 @@
 *.exe
 *.out
 *.app
+
+# Video files
+*.avi
+*.mov
+*.mp4
+
+# CMake ignore files
+MakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# Build directory
+build/*
