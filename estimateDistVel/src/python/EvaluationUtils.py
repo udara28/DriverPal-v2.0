@@ -1,27 +1,3 @@
-"""
- MIT License
-
- Copyright (c) 2020 John T Vorhies
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
-"""
-
 import numpy as np
 import pandas as pd
 import os
@@ -65,7 +41,7 @@ def convert_disps_to_depths_kitti(gt_disparities, pred_disparities):
     gt_depths = []
     pred_depths = []
     pred_disparities_resized = []
-
+    
     for i in range(len(gt_disparities)):
         gt_disp = gt_disparities[i]
         height, width = gt_disp.shape
@@ -73,7 +49,7 @@ def convert_disps_to_depths_kitti(gt_disparities, pred_disparities):
         pred_disp = pred_disparities[i]
         pred_disp = width * cv2.resize(pred_disp, (width, height), interpolation=cv2.INTER_LINEAR)
 
-        pred_disparities_resized.append(pred_disp)
+        pred_disparities_resized.append(pred_disp) 
 
         mask = gt_disp > 0
 
