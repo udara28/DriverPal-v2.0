@@ -21,6 +21,11 @@ cmake ..
 make
 ```
 
+### Required Packages
+
+In order to OpenCV video processing you need to build OpenCV with ffmpeg and gstreamer support. You could check whether your current OpenCV installation are having this support by compiling and running the _opencv\_stat.cpp_ file provided in this repository.
+
+
 **We noticed a link error when trying to build standalone using above commands. Use the source code in Vitis_In_Depth_Tutorial/Machine_Learning/Introduction/03-Basic/Module_7/app/test to compile if this is the case**
 
 ## Video Demonstration
